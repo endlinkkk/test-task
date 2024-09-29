@@ -1,7 +1,7 @@
 import React from 'react';
 import { Layout, Button, Space, message } from 'antd';
 import { useNavigate } from 'react-router-dom';
-import api from './api'; // Импортируйте ваш API файл
+import api from './api'; 
 
 const { Header } = Layout;
 
@@ -9,11 +9,11 @@ const NavigationBar = () => {
   const navigate = useNavigate();
 
   const handleBack = () => {
-    navigate(-1); // Navigates to the previous page
+    navigate(-1); 
   };
 
   const handleHome = () => {
-    navigate('/cats'); // Navigates to the /cats page
+    navigate('/cats');
   };
 
   const handleLogout = async () => {
@@ -25,9 +25,9 @@ const NavigationBar = () => {
             Authorization: `Token ${token}`,
           },
         });
-        localStorage.removeItem('token'); // Clear token from local storage
+        localStorage.removeItem('token'); 
         message.success("Вы успешно вышли из системы!");
-        navigate('/'); // Redirect to login page or home page
+        navigate('/'); 
       }
     } catch (error) {
       console.error('Ошибка при выходе:', error);

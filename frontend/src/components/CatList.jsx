@@ -37,10 +37,10 @@ const CatList = () => {
     try {
       const values = await form.validateFields();
       await api.post('/api/cats/', values);
-      // Optionally fetch cats again or update local state
-      setCats([...cats, values]); // Update local state with new cat
-      form.resetFields(); // Reset form fields
-      setIsModalVisible(false); // Close modal
+  
+      setCats([...cats, values]); 
+      form.resetFields(); 
+      setIsModalVisible(false); 
     } catch (error) {
       console.error('Ошибка при создании кошки:', error);
     }

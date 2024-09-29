@@ -36,16 +36,14 @@ const Auth = () => {
       const response = await api.post(url, values);
 
       if (isLogin) {
-        // Сохраните токен в локальное хранилище или состояние
         localStorage.setItem('token', response.data.auth_token);
         
         message.success("Вы успешно вошли!");
-        // Перенаправление на страницу кошек
         navigate('/cats');
       } else {
         message.success("Вы успешно зарегистрировались! Пожалуйста, войдите.");
         localStorage.setItem('user_id', response.data.id);
-        setIsLogin(true); // После регистрации переключаем на форму входа
+        setIsLogin(true);
       }
     } catch (error) {
       message.error('Ошибка при авторизации: ' + (error.response?.data?.non_field_errors || 'Неверные данные'));

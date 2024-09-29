@@ -1,16 +1,16 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Layout } from 'antd'; // Ensure Layout is imported
-import NavigationBar from './components/NavigationBar'; // Import your NavigationBar component
+import { Layout } from 'antd'; 
+import NavigationBar from './components/NavigationBar'; 
 import Auth from './components/Auth'; 
 import CatList from './components/CatList'; 
 import BreederList from './components/BreederList'; 
 import BreederDetail from './components/BreederDetail'; 
 import CatDetail from './components/CatDetail'; 
-import { useLocation } from 'react-router-dom'; // Import useLocation
+import { useLocation } from 'react-router-dom'; 
 
 const App = () => {
-    const location = useLocation(); // Получаем текущий путь
+    const location = useLocation(); 
   
     return (
       <Layout>

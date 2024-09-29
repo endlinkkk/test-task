@@ -42,7 +42,7 @@ const BreederDetail = () => {
     
     const ws = useRef(null);
 
-    // Используйте useEffect для загрузки userId
+
     useEffect(() => {
         const loadUserId = async () => {
             try {
@@ -54,7 +54,7 @@ const BreederDetail = () => {
         };
         
         loadUserId();
-    }, []); // Пустой массив зависимостей для выполнения один раз при монтировании
+    }, []); 
 
     useEffect(() => {
         const fetchCatsByBreeder = async () => {
@@ -63,7 +63,7 @@ const BreederDetail = () => {
                 setCats(response.data);
             } catch (error) {
                 if (error.response && error.response.status === 401) {
-                  // Если получен статус 401, перенаправляем на страницу входа
+
                   navigate('/');
                 } else {
                   console.error('Ошибка при получении кошек заводчика:', error);
@@ -74,7 +74,7 @@ const BreederDetail = () => {
     }, [id]);
 
     useEffect(() => {
-        if (!userId) return; // Ждем загрузки userId
+        if (!userId) return; 
 
         const roomName = `room_${Math.min(userId, id)}_${Math.max(userId, id)}`;
         console.log(userId, id)
